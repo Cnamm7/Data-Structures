@@ -1,9 +1,15 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+/**
+ * implementing main class to read the file and base on the input
+ * pop, push or print the list, by creating an object of stack.
+ * @author Cna
+ *
+ */
 public class Main {
-  public static void main(String[] args) {  
+  @SuppressWarnings("resource")
+public static void main(String[] args) {  
 	  Stack stack = new Stack();
 	  try {
 		  File file = new File("Test.txt");
