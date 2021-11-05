@@ -1,18 +1,32 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Main {
-  public static void main(String[] args) {
-	  SinglyLinkedList list = new SinglyLinkedList();
-	  boolean m = list.isEmpty();
-	  System.out.println(m);
-	  list.insertAtEnd("person1");
-	  list.insertAtEnd("person2");
-	  list.insertAtEnd("person3");
-	  boolean m1 = list.isEmpty();
-	  System.out.println(m1);
-	  list.print();
-	  System.out.println("The list contains " + list.count + " elements.");
-	  list.removeFromEnd();
-	  list.print();
-	  System.out.println("Now the list contains " + list.count + " elements.");
+  public static void main(String[] args) {  
+	  Stack stack = new Stack();
+	  try {
+		  File file = new File("Test.txt");
+		  Scanner myReader = new Scanner(file);
+		  while(myReader.hasNextLine())
+		  {
+			  String data = myReader.nextLine();
+			  if(data.equals("POP"))
+			  {
+				  stack.pop();
+			  }else if(data.equals("PRINT"))
+			  {
+				  stack.print();
+			  }else {
+				  stack.push(data);
+			  }
+			  
+		  }
+	  } catch(FileNotFoundException e)
+	  {
+		  System.out.println("File not found");
+		  e.printStackTrace();
+	  }	  
   }
 
 }

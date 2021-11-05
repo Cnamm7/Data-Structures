@@ -50,12 +50,11 @@ public class SinglyLinkedList {
 	void print()
 	{
 		Token temp = head.next;
-		System.out.print("Singly Linked List = [");
 		while(temp.next != null)
 		{
-			System.out.print(temp.data + ", ");
+			System.out.println(temp.data);
 			temp = temp.next;			
 		}
-		System.out.println(temp.data + "]");
+		System.out.println(temp.data);
 	}	
 }
