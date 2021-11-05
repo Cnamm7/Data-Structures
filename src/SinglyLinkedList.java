@@ -32,6 +32,21 @@ public class SinglyLinkedList {
 		}
 		count++;	
 	}
+	void removeFromEnd()
+	{
+		if(this.isEmpty())
+		{
+			System.out.println("The stack is empty");
+		}else {
+			Token temp = head.next;
+			for(int i = 1; i < (count - 1) ; i++)
+			{
+				temp = temp.next;
+			}
+			temp.next = null;
+			count--;
+		}
+	}
 	void print()
 	{
 		Token temp = head.next;
